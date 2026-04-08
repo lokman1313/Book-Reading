@@ -2,8 +2,8 @@ import React from 'react';
 import book from "../../assets/hero_img.jpg"
 const HomeBanner = () => {
     return (
-        <div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero bg-base-200 min-h-screen container mx-auto">
+  <div className="hero-content flex-col lg:flex-row-reverse hero-full">
     <img
       src={book}
       className="max-w-sm rounded-lg shadow-2xl"
