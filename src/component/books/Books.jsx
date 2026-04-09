@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { BookContaxt } from '../../context/BookContext';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Readlist from './readlist/Readlist';
+import WishList from './wishlist/WishList';
 
 const Books = () => {
     const {storedBook,wishList}=useContext(BookContaxt)
@@ -15,10 +17,18 @@ const Books = () => {
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
+      <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-9'>
+        {
+            storedBook.map((book,ind)=> <Readlist key={ind} book={book}></Readlist>)
+        }
+      </div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+      <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-9'>
+        {
+            wishList.map((book,index)=> <WishList key={index} book={book}></WishList>)
+        }
+      </div>
     </TabPanel>
   </Tabs>
         </div>
