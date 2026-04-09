@@ -4,6 +4,7 @@ import Layout from '../component/layout/Layout.jsx'
 import Books from '../component/books/Books.jsx'
 import PagesToRead from '../component/pagesToRead/PagesToRead.jsx'
 import ErrorPage from '../component/books/errorPage.jsx'
+import SingleBook from '../component/home/allBooks/SingleBook.jsx'
 
 export const router = createBrowserRouter([
   { 
@@ -13,6 +14,11 @@ export const router = createBrowserRouter([
       {
         index:true,
         Component : Home
+      },
+      {
+        path: '/singleBook/:id',
+        Component : SingleBook,
+        loader : ()=>fetch('/booksData.json')
       },
       {
         path:'/books',
