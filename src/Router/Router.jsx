@@ -26,7 +26,8 @@ export const router = createBrowserRouter([
       },
       {
         path: '/pagesToRead',
-        Component: PagesToRead
+        Component: PagesToRead,
+        loader : ()=>fetch('/booksData.json')
       }
     ],
     errorElement: <ErrorPage></ErrorPage>
